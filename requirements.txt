@@ -146,7 +146,6 @@ SQLAlchemy==1.4.35
 stack-data==0.2.0
 stevedore==3.5.0
 streamlit==1.8.1
-TBB==0.2
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
