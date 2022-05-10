@@ -1,3 +1,4 @@
+import os
 from email import header
 from io import StringIO
 import streamlit as st
@@ -6,7 +7,24 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_text as tf_text
 import altair as alt
+import dropbox
+import zipfile
 
+
+# check if you have model
+if not os.path.isfile("./imdb_bert"):
+    
+    with open("token_dropbox.txt") as f:
+        dropbox_token = f.read()
+
+    dbx = dropbox.Dropbox(dropbox_token)
+    dbx.files_download_zip_to_file(download_path="./imdb_bert.zip", path="/imdb_bert")
+
+    with zipfile.ZipFile('imdb_bert.zip') as zip_ref:
+        zip_ref.extractall("./")    
+
+
+  
 
 st.set_page_config(
     page_title ="Movie Comment Analyzer",
