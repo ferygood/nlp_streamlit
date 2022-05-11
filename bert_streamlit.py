@@ -10,8 +10,7 @@ import altair as alt
 import dropbox
 import zipfile
 
-
-# check if you have model
+# check if you have model using docker API
 if not os.path.isfile("./imdb_bert"):
     
     with open("token_dropbox.txt") as f:
@@ -23,8 +22,6 @@ if not os.path.isfile("./imdb_bert"):
     with zipfile.ZipFile('imdb_bert.zip') as zip_ref:
         zip_ref.extractall("./")    
 
-
-  
 
 st.set_page_config(
     page_title ="Movie Comment Analyzer",
